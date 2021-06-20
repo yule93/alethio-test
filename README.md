@@ -8,16 +8,17 @@
 http://106.10.53.116:8099
 
 ## App Components
-- Header(Menu)
-- Service
-- Sign up, Sign in
-- My page(+details)
+- [ ] Header(Menu)
+- [ ] Service
+- [ ] Sign up, Sign in
+- [ ] My page(+details)
 
 ## (Expected) Add module(or Library)
 1) Axios
-2) Styled-components
+2) Styled-components + open-color
 3) react-router-dom
 4) styled-reset
 5) prop-types
 6) react-helmet
-5) gh-pages
+7) gh-pages
+8) react-responsive

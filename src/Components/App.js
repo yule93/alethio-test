@@ -1,24 +1,22 @@
+import React, { Component } from 'react';
+import { useMediaQuary, useMediaQuery } from "react-responsive";
+import Router from "./Router";
 
-import './App.css';
+/* const isPc = useMediaQuery({
+  query: "(min-width: 414px)"
+});
+const isMoblie = useMediaQuary({
+  query: "(max-width: 414px)"
+});*/
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render () {
+    return (
+      <>
+        <Router />
+      </>
+    );
+  }
 }
 
 export default App;
