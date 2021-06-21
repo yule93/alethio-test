@@ -13,8 +13,10 @@ const WIDTH_MOBILE = 414;       // 모바일 크기
 
 const Container = styled.div`
     padding: 20px;
+    padding-top: 50px;
+    mix-blend-mode: difference;
+    font-size: 30px;
     width: ${({ xs }) => (xs ? `${calcWidth(xs)}` : `100%`)};
-    padding: 1rem;
 
     @media only screen and (min-width: ${WIDTH_MOBILE}px) {
         left: initial;
@@ -24,7 +26,7 @@ const Container = styled.div`
     }
 `;
 
-const MyPagePresenter = ({ loading, userInfo, error }) => {
+const MyPagePresenter = ({ loading, userInfo, error }) => (
     <>
         <Helmet>
             <title>My Page</title>
@@ -37,6 +39,6 @@ const MyPagePresenter = ({ loading, userInfo, error }) => {
             </Container>
         )}
     </>
-}
+);
 
 export default MyPagePresenter;

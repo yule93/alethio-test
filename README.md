@@ -19,6 +19,6 @@ http://106.10.53.116:8099
 3) react-router-dom
 4) styled-reset
 5) prop-types
-6) react-helmet
+6) react-helmet (썸네일, 헤더 등 커스텀)
 7) gh-pages
 8) react-responsive

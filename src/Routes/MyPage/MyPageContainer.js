@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { userInfoApi } from '../../api';
 import MyPagePresenter from './MyPagePresenter';
 
@@ -14,7 +13,7 @@ export default class MyPage extends React.Component {
         try {
             setTimeout(function() {
                 console.log("Loaded!");
-            });
+            }, 2000);
             const {
                 data: {results: userInfo}
             } = await userInfoApi.userName();

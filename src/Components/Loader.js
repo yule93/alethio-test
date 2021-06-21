@@ -8,11 +8,16 @@ const Container = styled.div`
     justify-content: center;
     font-size: 30px;
     margin-top: 20px;
+    mix-blend-mode: difference;
 `;
 
-export default () =>
+const Loader = () => (
     <Container>
         <span role = "img" aria-label ="Loading">
-            Now Loading...⏰
+            Now Loading...
         </span>
     </Container>
+);
+
+export default Loader;
+    
