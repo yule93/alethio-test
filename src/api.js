@@ -10,6 +10,14 @@ const api = axios.create({
 
 export default api;
 
-export const userInfoApi = {
-    userName: () => api.get("")
+export const myPageApi = {
+    userName: () => api.get(""),
+    orderInfo : page => setTimeout(api.get(`order?page=${page}`), 1000)
+}
+
+export const userLoginApi = {
+    logIn : ({email, password}) => api.post("login", {
+        "email": `${email}`,
+        "password": `${password}`
+    }),
 }

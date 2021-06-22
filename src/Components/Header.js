@@ -1,7 +1,6 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
-import OpenColor from "open-color";
 
 const Header = styled.header`
   color: black;
@@ -12,20 +11,21 @@ const Header = styled.header`
   height: 50px;
   text-align: center;
   display: flex;
-  
   align-items: center;
-  background-color: rgba(240, 240, 240, 0.8);
+  background-color: rgba(240, 240, 240, 1);
   z-index: 10;
-  box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 1px 2px 2px rgba(0, 0, 0, 0.8);
   border-bottom: 3px solid ${props => (props.current ? "#F6D8CE" : "transparent")};
   transition: border-bottom 0.5s ease-in-out;
 `;
 
 const Logo = styled.h1`
+  color: white;
   mix-blend-mode: difference;
   padding: 20px;
   font-size: 24px;
   font-weight: bold;
+  display: inline-block;
 `;
 
 const List = styled.ul`
@@ -40,7 +40,7 @@ const Item = styled.li`
   text-align: center;
   background-color:
     ${props => (props.current ? "#F6D8CE" : "transparent")};
-  transition: border-bottom 1s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
   text-decoration-line: none;
 `;
 

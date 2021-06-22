@@ -14,7 +14,9 @@ export default () => (
         <>
             <Header />
             <Switch>
-                <MyPage path = "/mypage" exact component = {MyPage} />
+                <Route path = "/" component = {Service} />
+                <Route path = "/mypage" exact component = {MyPage} />
+                <Redirect from = "*" to = "/" />
             </Switch>
         </>
     </Router>

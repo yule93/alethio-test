@@ -1,5 +1,5 @@
 import React from 'react';
-import { userInfoApi } from '../../api';
+import { myPageApi } from '../../api';
 import MyPagePresenter from './MyPagePresenter';
 
 export default class MyPage extends React.Component {
@@ -16,7 +16,7 @@ export default class MyPage extends React.Component {
             }, 2000);
             const {
                 data: {results: userInfo}
-            } = await userInfoApi.userName();
+            } = await myPageApi.userName();
             this.setState({ userInfo });
         } catch {
             this.setState({
