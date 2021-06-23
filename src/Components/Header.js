@@ -10,12 +10,14 @@ const Header = styled.header`
   width: 100%;
   height: 50px;
   text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
   display: flex;
   align-items: center;
-  background-color: rgba(240, 240, 240, 1);
+  background-color: rgba(20, 20, 20, 1);
   z-index: 10;
   box-shadow: 0px 1px 2px 2px rgba(0, 0, 0, 0.8);
-  border-bottom: 3px solid ${props => (props.current ? "#F6D8CE" : "transparent")};
+  border-bottom: 3px solid ${props => (props.current ? "#ff9b80" : "transparent")};
   transition: border-bottom 0.5s ease-in-out;
 `;
 
@@ -38,14 +40,17 @@ const Item = styled.li`
   width: 80px;
   height: 50px;
   text-align: center;
+  border-radius: 1px;
   background-color:
-    ${props => (props.current ? "#F6D8CE" : "transparent")};
+    ${props => (props.current ? "#ff9b80" : "transparent")};
   transition: background-color 0.3s ease-in-out;
   text-decoration-line: none;
 `;
 
 const SLink = styled(Link)`
   height: 50px;
+  color: white;
+  mix-blend-mode: difference;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -12,6 +12,7 @@ const calcWidth = span => {
 const WIDTH_MOBILE = 414;       // 모바일 크기
 
 const Container = styled.div`
+    top: 10%;
     padding: 20px;
     padding-top: 50px;
     mix-blend-mode: difference;
@@ -26,12 +27,12 @@ const Container = styled.div`
     }
 `;
 
-const MyPagePresenter = ({ loading, userInfo, error }) => (
+const MyPagePresenter = ({ isLoading, userInfo, error }) => (
     <>
         <Helmet>
             <title>My Page</title>
         </Helmet>
-        {loading ? (
+        {isLoading ? (
             <Loader />
         ) : (
             <Container>

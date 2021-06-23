@@ -1,21 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { userLoginApi } from '../../api';
-import ServicePresenter from './ServicePresenter';
+import SignInPresenter from './SignInPresenter';
 
 export default class Service extends React.Component {
     state = {
         isLoading: true,
-        userInfo: {},
         error: null
     };
     render() {
-        const { isLoading, userInfo, error } = this.state;
+        const { isLoading, error } = this.state;
+        const { token, email } = userLoginApi.userInfo();
         return (
-            <ServicePresenter
+            <SignInPresenter
                 isLoading = {isLoading}
-                userInfo = {userInfo}
                 error = {error}
+                token = {token}
+                email = {email}
             />
         );
     }

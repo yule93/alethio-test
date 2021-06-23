@@ -1,8 +1,9 @@
 import React, {useState, useContext, createContext} from "react";
+import { userLoginApi } from "../api";
 
 const TokenContext = createContext();
 
-const Token = ({token, email}) => {
+const useUser = ({token, email, password}) => {
     return (
         <TokenContext.Provider value = {{email}}>
             {token}
@@ -10,4 +11,4 @@ const Token = ({token, email}) => {
     )
 }
 
-export default Token;
+export default useUser;

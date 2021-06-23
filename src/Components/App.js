@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Router from "./Router";
+import AggRouter from "./Router";
 import GlobalStyles from "./GlobalStyles";
 
 /* const isPc = useMediaQuery({
@@ -13,8 +13,8 @@ class App extends Component {
   render () {
     return (
       <>
-        <Router />
-        <GlobalStyles />
+        <AggRouter />
+        <GlobalStyles darkMode = "true"/>
       </>
     );
   }
