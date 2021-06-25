@@ -5,10 +5,9 @@
 - Main Lan: HTML, JS(+JSX, React)
 
 ## API Host Address
-http://106.10.53.116:8099
 
 ## App Components
-- [ ] Header(Menu)
+- [x] Header(Menu)
 - [ ] Service
 - [ ] Sign up, Sign in
 - [ ] My page(+details)
