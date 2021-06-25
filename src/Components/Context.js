@@ -1,14 +1,20 @@
-import React, {useState, useContext, createContext} from "react";
-import { userLoginApi } from "../api";
+import React, { useState } from "react";
 
-const TokenContext = createContext();
+export const UserContext = React.createContext();
 
-const useUser = ({token, email, password}) => {
+const UserContextProvider = ({ children }) => {
+    const [user, setUser] = useState({
+        email: "",
+        token: "",
+        isLogin: false
+    });
+
+    const logUserIn = ({email, token}) => setUser({ email, token, isLogin: true });
     return (
-        <TokenContext.Provider value = {{email}}>
-            {token}
-        </TokenContext.Provider>
-    )
-}
+        <UserContext.Provider value = {{ user, logUserIn }}>
+            {children}
+        </UserContext.Provider>
+    );
+};
 
-export default useUser;
+export default UserContextProvider;

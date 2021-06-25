@@ -1,5 +1,5 @@
 import React from 'react';
-import userLoginApi from "../../api";
+import {userLoginApi, myPageApi} from "../../api";
 import ServicePresenter from './ServicePresenter';
 
 export default class Service extends React.Component {
@@ -11,23 +11,24 @@ export default class Service extends React.Component {
     };
 
     async componentDidMount() {
-        try{
-            setTimeout(this.setState({ isLoading: false, token: "123456789"}), 2000);
-            /*const {
-                data: { results: token }
-            } = await userLoginApi.userInfo();*/
-        } catch {
-            this.setState({
-                error: "예기치 못한 오류가 발생했습니다."
-            });
-        } finally {
-            this.setState({ isLoading: false });
-        }
+        setTimeout(() => {
+            try{
+                const {
+                    data: { results: token }
+                } = userLoginApi.userInfo();
+            } catch {
+                this.setState({
+                    error: "예기치 못한 오류가 발생했습니다."
+                });
+            } finally {
+                this.setState({ isLoading: false });
+            }
+        }, 2000);
     }
 
     render() {
-        const { isLoading, error } = this.state;
-        const { token, email } = {} //= userLoginApi.userInfo();
+        const { isLoading, error, email } = this.state;
+        const { token } = this.state;
         return (
             <ServicePresenter
                 isLoading = {isLoading}

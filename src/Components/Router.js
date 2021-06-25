@@ -9,15 +9,17 @@ import Header from "./Header";
 import MyPage from "../Routes/MyPage";
 import Service from "../Routes/Service";
 import PageNotFound from "./PageNotFound";
+import LogInOut from "../Routes/LogInOut";
 
 const AggRouter = () => (
     <Router>
         <>
             <Header />
             <Switch>
-                <Route path = "/" component = {Service} />
-                <Route path = "/mypage" component = {MyPage} />
-                <Route path = "/404error" component = {PageNotFound} />
+                <Route path = "/" exact component = {Service} />
+                <Route path = "/mypage" exact component = {MyPage} />
+                <Route path = "/login" exact component = {LogInOut} />
+                <Route path = "/404error" exact component = {PageNotFound} />
                 <Redirect from = "*" to = "/" />
             </Switch>
         </>

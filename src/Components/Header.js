@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
+import { UserContext } from "./Context";
 
 const Header = styled.header`
   color: black;
@@ -26,7 +27,6 @@ const Logo = styled.h1`
   mix-blend-mode: difference;
   padding: 20px;
   font-size: 24px;
-  font-weight: bold;
   display: inline-block;
 `;
 
@@ -56,7 +56,32 @@ const SLink = styled(Link)`
   justify-content: center;
 `;
 
-const isLogin = "";
+var isLogin;
+
+export const TopHeader = ({ location: {pathname} }) => {
+  /*const {
+    user: {email, token, isLogin}
+  } = useContext(UserContext);*/
+  const email = "test@test.com";
+  const token = "12345678";
+  isLogin = true;
+  return (
+    <Header>
+    <Logo>ALETHIO</Logo>
+    <List>
+      <Item current={pathname === "/"}>
+        <SLink to="/">Service</SLink>
+      </Item>
+      <Item current={pathname === "/mypage"}>
+        <SLink to={isLogin ? '/mypage' : '/login'}>My Page</SLink>
+      </Item>
+      <Item current={pathname === "/login" || pathname === "/logout"}>
+        <SLink to={isLogin ? '/logout' : '/login'}>{isLogin ? "Log Out" : "Log In"}</SLink>
+      </Item>
+    </List>
+  </Header>
+  );
+};
 
 export default withRouter(({ location: { pathname } }) => (
   <Header>

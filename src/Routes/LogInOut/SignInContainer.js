@@ -10,7 +10,7 @@ export default class Service extends React.Component {
     };
     render() {
         const { isLoading, error } = this.state;
-        const { token, email } = userLoginApi.userInfo();
+        const { token, email } = {}; //userLoginApi.userInfo();
         return (
             <SignInPresenter
                 isLoading = {isLoading}
